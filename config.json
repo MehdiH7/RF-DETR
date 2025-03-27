@@ -1,0 +1,46 @@
+{
+    "training": {
+        "epochs": 15,
+        "batch_size": 16,
+        "learning_rate": 1e-4,
+        "lr_encoder": 1.5e-4,
+        "weight_decay": 1e-4,
+        "lr_drop": 100,
+        "grad_accum_steps": 4,
+        "clip_max_norm": 0.1,
+        "lr_vit_layer_decay": 0.8,
+        "lr_component_decay": 0.7
+    },
+    "model": {
+        "num_classes": 3,
+        "pretrain_weights": "rf-detr-base.pth",
+        "encoder": "dinov2_windowed_small",
+        "vit_encoder_num_layers": 12,
+        "dec_layers": 3,
+        "dim_feedforward": 2048,
+        "hidden_dim": 256,
+        "sa_nheads": 8,
+        "ca_nheads": 16,
+        "num_queries": 300
+    },
+    "data": {
+        "dataset_dir": "dataset/1561_SmartCrop",
+        "resolution": 560,
+        "num_workers": 2,
+        "square_resize_div_64": true
+    },
+    "logging": {
+        "comet": {
+            "project_name": "RF-DETR",
+            "workspace": "your-workspace-name"
+        },
+        "checkpoint_interval": 10,
+        "output_dir": "output"
+    },
+    "device": {
+        "use_amp": true,
+        "use_ema": true,
+        "ema_decay": 0.993,
+        "ema_tau": 100
+    }
+} 

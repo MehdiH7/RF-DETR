@@ -4,4 +4,4 @@ weights
 RF-DETR_wrapper-762283.err
 RF-DETR_wrapper-762283.out
 __pycache__
-output
+outputrf-detr-base.pth
